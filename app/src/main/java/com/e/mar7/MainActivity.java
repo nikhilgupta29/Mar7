@@ -45,10 +45,10 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         SharedPreferences sharedPreferences = getSharedPreferences("com.e.mar7",MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        //editor.putString("name",usrname.getText().toString().trim());
-        //editor.putString("name",pass.getText().toString().trim());
-        editor.putString("Username","nikhil.gupta_mca18@gla.ac.in");
-        editor.putString("Password","123456");
+        editor.putString("user",usrname.getText().toString().trim());
+        editor.putString("password",pass.getText().toString().trim());
+        //editor.putString("Username","nikhil.gupta_mca18@gla.ac.in");
+        //editor.putString("Password","123456");
         editor.putBoolean("bool",true);
         editor.apply();
     }
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         SharedPreferences sharedPreferences = getSharedPreferences("com.e.mar7",MODE_PRIVATE);
-        s1 = sharedPreferences.getString("uesername", "user");
+        s1 = sharedPreferences.getString("user", "user");
         s2 = sharedPreferences.getString("Password","Pass");
         Boolean remember =sharedPreferences.getBoolean("Bool",false);
         Toast.makeText(this, "Bool: "+remember, Toast.LENGTH_SHORT).show();
